@@ -16,6 +16,7 @@ class Journey extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Journey',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         appBarTheme: AppBarTheme(color: Color(0xFF4A14C)),

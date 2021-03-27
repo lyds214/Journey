@@ -20,6 +20,7 @@ class _ProfileViewState extends State<ProfileView> {
             onPressed: () {},
           ),
         ],
+        backgroundColor: Colors.purple[900],
       ),
       body: Padding(
         padding: EdgeInsets.all(24),
