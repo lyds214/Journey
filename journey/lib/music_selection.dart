@@ -10,7 +10,9 @@ class _MusicSelectionState extends State<MusicSelection> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        elevation: 0.0,
+      ),
       body: Padding(
         padding: EdgeInsets.all(55),
         child: Container(
