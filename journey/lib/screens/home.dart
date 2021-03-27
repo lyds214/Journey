@@ -42,6 +42,8 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
 
+  bool dailyEntry = false;
+
   Future<Quote> quote;
 
   @override
@@ -61,7 +63,7 @@ class _HomeViewState extends State<HomeView> {
         );
       },
       child: const Icon(Icons.add),
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
     );
 
     final pageBody = Container(
@@ -98,15 +100,7 @@ class _HomeViewState extends State<HomeView> {
               color: Colors.black,
               child: Text("Spotify Recommendations")),
 
-          Spacer(),
-
-          Divider(
-            height: 20,
-            thickness: 5,
-            indent: 20,
-            endIndent: 20,
-            color: Colors.white,
-          ),
+          Spacer(flex: 3),
 
           FutureBuilder<Quote>(
           future: quote,
@@ -115,11 +109,37 @@ class _HomeViewState extends State<HomeView> {
               return SafeArea(
                 child: Column(
                   children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(top: 50.0),
+                    Divider(
+                      height: 20,
+                      thickness: 2,
+                      indent: 20,
+                      endIndent: 20,
+                      color: Colors.white,
                     ),
-                    Text(snapshot.data.text),
-                    Text("-- ${snapshot.data.author}"),
+                    Padding(
+                      padding: EdgeInsets.only(top: 15.0),
+                    ),
+                    Text(
+                      snapshot.data.text,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        fontSize: 26.0
+                        )
+                    ),
+
+                    Padding(padding: const EdgeInsets.all(15)),
+                    
+                    Text(
+                      "-- ${snapshot.data.author}",
+                    ),
+
+                    Padding(padding: const EdgeInsets.all(15)),
+
+                    Text(
+                      "Inspirational quotes provided by https://zenquotes.io/",
+                      style: TextStyle(fontSize: 8)
+                    ),
                   ],
                 ),
               );
@@ -131,7 +151,7 @@ class _HomeViewState extends State<HomeView> {
             },
           ),
 
-          Spacer(flex: 2),
+          Spacer(),
         ]));
 
     return Scaffold(
