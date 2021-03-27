@@ -22,14 +22,19 @@ class _HomeViewState extends State<HomeView> {
     final pageBody = Container(
       height: (mediaQuery.size.height -
           mediaQuery.padding.top),
+      width: mediaQuery.size.width,
+      padding: const EdgeInsets.all(15),
       child: Column(
         children: <Widget>[
           Spacer(),
 
           Container(
             height: 50,
+            width: mediaQuery.size.width,
             child: Text(
-              "Good Afternoon, User"
+              "Good Afternoon, User",
+              textAlign: TextAlign.left,
+              style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0)
             ),
           ),
 
@@ -58,6 +63,7 @@ class _HomeViewState extends State<HomeView> {
             thickness: 5,
             indent: 20,
             endIndent: 20,
+            color: Colors.white,
           ),
 
           Spacer(flex: 2),
