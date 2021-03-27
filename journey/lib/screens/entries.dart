@@ -39,7 +39,7 @@ class _EntryViewState extends State<EntryView> {
       padding: const EdgeInsets.all(30),
       child: Column(
         children: <Widget>[
-          SizedBox(height: mediaQuery.padding.top),
+          SizedBox(height: mediaQuery.padding.top / 2),
           Container(
             height: 50,
             width: mediaQuery.size.width,
@@ -94,6 +94,15 @@ class _EntryViewState extends State<EntryView> {
           ),
         ),
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.5),
+            spreadRadius: 3,
+            blurRadius: 7,
+            offset: Offset(0, 10), // changes position of shadow
+          ),
+        ],
       ),
       child: InkWell(
         onTap: () {},
@@ -112,7 +121,7 @@ class _EntryViewState extends State<EntryView> {
                         child: Text(
                           "Mood: ${item.mood}",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18),
+                              fontWeight: FontWeight.bold, fontSize: 18, color: Colors.purple[900]),
                           textAlign: TextAlign.left,
                         ),
                       ),
@@ -124,6 +133,7 @@ class _EntryViewState extends State<EntryView> {
                           children: <Widget>[
                             Text(
                               '${DateFormat.yMMMd().format(item.date)}',
+                              style: TextStyle(color: Colors.purple[900])
                             ),
                           ],
                         ),
@@ -147,7 +157,7 @@ class _EntryViewState extends State<EntryView> {
                             ? '${item.journal.substring(0, 35)}...'
                             : '${item.journal}',
                         textAlign: TextAlign.left,
-                        style: TextStyle(color: Colors.white, fontSize: 15)),
+                        style: TextStyle(color: Colors.purple[900], fontSize: 15)),
                   ),
                 ],
               ),

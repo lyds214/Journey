@@ -74,7 +74,7 @@ class _HomeViewState extends State<HomeView> {
       padding: const EdgeInsets.all(30),
       child: Column(
         children: <Widget>[
-          SizedBox(height: mediaQuery.padding.top),
+          SizedBox(height: mediaQuery.padding.top / 2),
 
           Container(
             height: 50,
@@ -153,7 +153,7 @@ class _HomeViewState extends State<HomeView> {
                 return Container(
                   alignment: Alignment.center,
                   width: 100,
-                  child: CircularProgressIndicator()
+                  child: CircularProgressIndicator(backgroundColor: Colors.transparent, valueColor: new AlwaysStoppedAnimation<Color>(Colors.white))
                 );
                 },
               ),
