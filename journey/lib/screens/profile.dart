@@ -9,7 +9,7 @@ class ProfileView extends StatefulWidget {
 class _ProfileViewState extends State<ProfileView> {
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("Profile")),
+      body: Center(child: Text("Your most common mood this month so far is 'HAPPY' with 5 instances")),
     );
   }
 }
