@@ -12,11 +12,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       color: Color(0xFF01579B),
       heroImagePath: 'assets/img/meme1.jpg',
       title: Text(
-        "Welcome to Hermes!",
+        "Welcome to Journey!",
         style: TextStyle(
           fontSize: 34,
           fontWeight: FontWeight.w800,
-          color: Colors.white,
+          color: Colors.purple[900],
         ),
       ),
       body: Text(""),
@@ -88,17 +88,26 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: FancyOnBoarding(
+
+    final mediaQuery = MediaQuery.of(context);
+
+    final pageBody = Container(
+      height: (mediaQuery.size.height -
+          mediaQuery.padding.top),
+      child: FancyOnBoarding(
         doneButtonText: "Done",
         skipButtonText: "Skip",
         onDoneButtonPressed: () =>
-            Navigator.of(context).pushReplacementNamed('homepage.dart'),
+            Navigator.of(context).pushReplacementNamed('/tabs'),
         onSkipButtonPressed: () =>
-            Navigator.of(context).pushReplacementNamed('homepage.dart'),
+            Navigator.of(context).pushReplacementNamed('/tabs'),
         pageList: pageList,
       ),
+    );
+
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: pageBody,
     );
   }
 }

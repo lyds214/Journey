@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 // Views
 import './screens/tabs.dart';
+import './screens/home.dart';
 import './onboarding/onboarding_screen.dart';
 
 void main() {
@@ -18,19 +19,24 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.purple[900],
-        // textTheme: TextTheme(
-        //   bodyText1: TextStyle(),
-        //   bodyText2: TextStyle(),
-        // ).apply(
-        //   bodyColor: Colors.white, 
-        //   displayColor: Colors.blue,
-        // ),
         textTheme: GoogleFonts.openSansTextTheme(
-          Theme.of(context).textTheme,
+          TextTheme(
+            bodyText1: TextStyle(),
+            bodyText2: TextStyle(),
+          ).apply(
+            bodyColor: Colors.white, 
+            displayColor: Colors.blue,
+          ),
         ),
-
       ),
-      home: Tabs(),
+      routes: {
+        Tabs.routeName: (ctx) => Tabs(),
+        HomeView.routeName: (ctx) => HomeView(),
+      },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (ctx) => Tabs());
+      },
+      home: OnBoardingScreen(),
     );
   }
 }

@@ -23,7 +23,7 @@ class _HomeViewState extends State<HomeView> {
       height: (mediaQuery.size.height -
           mediaQuery.padding.top),
       width: mediaQuery.size.width,
-      padding: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(30),
       child: Column(
         children: <Widget>[
           Spacer(),
@@ -41,7 +41,7 @@ class _HomeViewState extends State<HomeView> {
           Spacer(),
 
           Container(
-            height: 200,
+            height: 50,
             child: Text(
               "Reflection Question"
             ),
@@ -51,6 +51,8 @@ class _HomeViewState extends State<HomeView> {
 
           Container(
             height: 200,
+            width: mediaQuery.size.width,
+            color: Colors.black,
             child: Text(
               "Spotify Recommendations"
             )
