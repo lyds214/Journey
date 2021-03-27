@@ -38,7 +38,7 @@ class Journey extends StatelessWidget {
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (ctx) => Tabs());
       },
-      home: OnBoarding(),
+      home: Tabs(),
     );
   }
 }
