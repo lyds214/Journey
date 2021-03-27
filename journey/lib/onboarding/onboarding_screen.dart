@@ -1,22 +1,39 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fancy_on_boarding/fancy_on_boarding.dart';
+import 'package:journey/screens/tabs.dart';
 
-class OnBoardingScreen extends StatefulWidget {
+class OnBoarding extends StatefulWidget {
+  static const routeName = '/onboarding';
+  String userRole = '';
+
+  OnBoarding({this.userRole});
+
   @override
-  _OnBoardingScreenState createState() => _OnBoardingScreenState();
+  _OnBoardingState createState() => _OnBoardingState();
 }
 
-class _OnBoardingScreenState extends State<OnBoardingScreen> {
+class _OnBoardingState extends State<OnBoarding> {
+  String uid;
+
+  void initState() {
+    super.initState();
+    fetchUserID();
+  }
+
+  fetchUserID() {
+    // uid = FirebaseAuth.instance.currentUser.uid;
+  }
   final pageList = [
     PageModel(
       color: Color(0xFF01579B),
-      //heroImagePath: 'assets/img/meme1.jpg',
+      heroImagePath: 'assets/img/meme1.jpg',
       title: Text(
         "Welcome to Journey!",
         style: TextStyle(
           fontSize: 34,
           fontWeight: FontWeight.w800,
-          color: Colors.purple[900],
+          color: Colors.white,
         ),
       ),
       body: Text(""),
@@ -24,7 +41,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     ),
     PageModel(
       color: Color(0xFF0277BD),
-      //heroImagePath: 'assets/img/meme2.jpg',
+      heroImagePath: 'assets/img/meme2.jpg',
       title: Text(
         "Purpose",
         style: TextStyle(
@@ -45,7 +62,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     ),
     PageModel(
       color: Color(0xFF0288D1),
-      //heroImagePath: 'assets/img/meme3.png',
+      heroImagePath: 'assets/img/meme3.png',
       title: Text(
         "Give and Take",
         style: TextStyle(
@@ -66,7 +83,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     ),
     PageModel(
       color: Color(0xFF039BE5),
-      //heroImagePath: 'assets/img/meme4.png',
+      heroImagePath: 'assets/img/meme4.png',
       title: Text(
         "Chat",
         style: TextStyle(
@@ -85,87 +102,35 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       ),
       iconImagePath: '',
     ),
-    PageModel(
-      color: Color(0xFF039BE5),
-      //heroImagePath: 'assets/img/meme4.png',
-      title: Text(
-        "What is your name?",
-        style: TextStyle(
-          fontSize: 34,
-          fontWeight: FontWeight.w800,
-          color: Colors.white,
-        ),
-      ),
-      body: TextField(
-        //obscureText: true,
-        decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: "Name",
-        ),
-      ),
-      iconImagePath: '',
-    ),
-    PageModel(
-      color: Color(0xFF039BE5),
-      //heroImagePath: 'assets/img/meme4.png',
-      title: Text(
-        "What is your email?",
-        style: TextStyle(
-          fontSize: 34,
-          fontWeight: FontWeight.w800,
-          color: Colors.white,
-        ),
-      ),
-      body: TextField(
-        //obscureText: true,
-        decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: "Email",
-        ),
-      ),
-      iconImagePath: '',
-    ),
-    PageModel(
-      color: Color(0xFF039BE5),
-      //heroImagePath: 'assets/img/meme4.png',
-      title: Text(
-        "What is your password?",
-        style: TextStyle(
-          fontSize: 34,
-          fontWeight: FontWeight.w800,
-          color: Colors.white,
-        ),
-      ),
-      body: TextField(
-        obscureText: true,
-        decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: "Password",
-        ),
-      ),
-      iconImagePath: '',
-    ),
   ];
+
+  NavigateToTabs() async {
+    /// update onbaording status of current user
+    // await DatabaseService().updateOnboardingStatus(uid)
+    //     .then((value) {
+    //   if(widget.userRole == 'student') {
+    //     return StudentTabs();
+    //   } else {
+    //     return DonorTabs();
+    //   }
+    // });
+  }
+
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
-
-    final pageBody = Container(
-      height: (mediaQuery.size.height - mediaQuery.padding.top),
-      child: FancyOnBoarding(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: FancyOnBoarding(
         doneButtonText: "Done",
         skipButtonText: "Skip",
         onDoneButtonPressed: () =>
-            Navigator.of(context).pushReplacementNamed('/tabs'),
+            Tabs(),
+        // Navigator.of(context).pushNamed(StudentTabs.routeName),
         onSkipButtonPressed: () =>
-            Navigator.of(context).pushReplacementNamed('/tabs'),
+            Tabs(),
+        // Navigator.of(context).pushNamed(StudentTabs.routeName),
         pageList: pageList,
       ),
-    );
-
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: pageBody,
     );
   }
 }
