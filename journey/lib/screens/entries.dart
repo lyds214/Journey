@@ -47,8 +47,9 @@ class _EntryViewState extends State<EntryView> {
                 textAlign: TextAlign.left,
                 style: DefaultTextStyle.of(context)
                     .style
-                    .apply(fontSizeFactor: 2.0)),
+                    .apply(fontSizeFactor: 3.0)),
           ),
+          SizedBox(height: 30),
           Container(
             height: (mediaQuery.size.height),
             child: ListView.separated(
