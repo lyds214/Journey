@@ -85,15 +85,73 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       ),
       iconImagePath: '',
     ),
+    PageModel(
+      color: Color(0xFF039BE5),
+      heroImagePath: 'assets/img/meme4.png',
+      title: Text(
+        "What is your name?",
+        style: TextStyle(
+          fontSize: 34,
+          fontWeight: FontWeight.w800,
+          color: Colors.white,
+        ),
+      ),
+      body: TextField(
+        //obscureText: true,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: "Name",
+        ),
+      ),
+      iconImagePath: '',
+    ),
+    PageModel(
+      color: Color(0xFF039BE5),
+      heroImagePath: 'assets/img/meme4.png',
+      title: Text(
+        "What is your email?",
+        style: TextStyle(
+          fontSize: 34,
+          fontWeight: FontWeight.w800,
+          color: Colors.white,
+        ),
+      ),
+      body: TextField(
+        //obscureText: true,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: "Email",
+        ),
+      ),
+      iconImagePath: '',
+    ),
+    PageModel(
+      color: Color(0xFF039BE5),
+      heroImagePath: 'assets/img/meme4.png',
+      title: Text(
+        "What is your password?",
+        style: TextStyle(
+          fontSize: 34,
+          fontWeight: FontWeight.w800,
+          color: Colors.white,
+        ),
+      ),
+      body: TextField(
+        obscureText: true,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: "Password",
+        ),
+      ),
+      iconImagePath: '',
+    ),
   ];
   @override
   Widget build(BuildContext context) {
-
     final mediaQuery = MediaQuery.of(context);
 
     final pageBody = Container(
-      height: (mediaQuery.size.height -
-          mediaQuery.padding.top),
+      height: (mediaQuery.size.height - mediaQuery.padding.top),
       child: FancyOnBoarding(
         doneButtonText: "Done",
         skipButtonText: "Skip",
