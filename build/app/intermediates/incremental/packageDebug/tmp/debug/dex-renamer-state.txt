@@ -1,0 +1,4 @@
+#Sat Mar 27 10:21:28 PDT 2021
+base.0=C\:\\Users\\lydia\\OneDrive\\Desktop\\Projects\\Library\\Journey\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
