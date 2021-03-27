@@ -42,7 +42,7 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
 
-  bool dailyEntry = false;
+  bool dailyEntry;
 
   Future<Quote> quote;
 
@@ -64,6 +64,7 @@ class _HomeViewState extends State<HomeView> {
       },
       child: const Icon(Icons.add),
       backgroundColor: Colors.white,
+      foregroundColor: Colors.purple[900],
     );
 
     final pageBody = Container(
@@ -102,53 +103,60 @@ class _HomeViewState extends State<HomeView> {
 
           Spacer(flex: 3),
 
-          FutureBuilder<Quote>(
-          future: quote,
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return SafeArea(
-                child: Column(
-                  children: <Widget>[
-                    Divider(
-                      height: 20,
-                      thickness: 2,
-                      indent: 20,
-                      endIndent: 20,
-                      color: Colors.white,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 15.0),
-                    ),
-                    Text(
-                      snapshot.data.text,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        fontSize: 26.0
-                        )
-                    ),
+          Container(
+            height: 300,
+            child: FutureBuilder<Quote>(
+              future: quote,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return SafeArea(
+                      child: Column(
+                        children: <Widget>[
+                          Divider(
+                            height: 20,
+                            thickness: 2,
+                            indent: 20,
+                            endIndent: 20,
+                            color: Colors.white,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 15.0),
+                          ),
+                          Text(
+                            snapshot.data.text,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontStyle: FontStyle.italic,
+                              fontSize: 26.0
+                              )
+                          ),
 
-                    Padding(padding: const EdgeInsets.all(15)),
-                    
-                    Text(
-                      "-- ${snapshot.data.author}",
-                    ),
+                          Padding(padding: const EdgeInsets.all(15)),
+                          
+                          Text(
+                            "-- ${snapshot.data.author}",
+                          ),
 
-                    Padding(padding: const EdgeInsets.all(15)),
+                          Padding(padding: const EdgeInsets.all(15)),
 
-                    Text(
-                      "Inspirational quotes provided by https://zenquotes.io/",
-                      style: TextStyle(fontSize: 8)
-                    ),
-                  ],
-                ),
-              );
-            } else if (snapshot.hasError) {
-              return Text("${snapshot.error}");
-            }
-            // By default, show a loading spinner.
-            return CircularProgressIndicator();
-            },
+                          Text(
+                            "Inspirational quotes provided by https://zenquotes.io/",
+                            style: TextStyle(fontSize: 8)
+                          ),
+                        ],
+                      ),
+                  );
+                } else if (snapshot.hasError) {
+                  return Text("${snapshot.error}");
+                }
+                // By default, show a loading spinner.
+                return Container(
+                  alignment: Alignment.center,
+                  width: 100,
+                  child: CircularProgressIndicator()
+                );
+                },
+              ),
           ),
 
           Spacer(),
