@@ -10,7 +10,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   final pageList = [
     PageModel(
       color: Color(0xFF01579B),
-      heroImagePath: 'assets/img/meme1.jpg',
+      //heroImagePath: 'assets/img/meme1.jpg',
       title: Text(
         "Welcome to Journey!",
         style: TextStyle(
@@ -24,7 +24,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     ),
     PageModel(
       color: Color(0xFF0277BD),
-      heroImagePath: 'assets/img/meme2.jpg',
+      //heroImagePath: 'assets/img/meme2.jpg',
       title: Text(
         "Purpose",
         style: TextStyle(
@@ -45,7 +45,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     ),
     PageModel(
       color: Color(0xFF0288D1),
-      heroImagePath: 'assets/img/meme3.png',
+      //heroImagePath: 'assets/img/meme3.png',
       title: Text(
         "Give and Take",
         style: TextStyle(
@@ -66,7 +66,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     ),
     PageModel(
       color: Color(0xFF039BE5),
-      heroImagePath: 'assets/img/meme4.png',
+      //heroImagePath: 'assets/img/meme4.png',
       title: Text(
         "Chat",
         style: TextStyle(
@@ -87,7 +87,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     ),
     PageModel(
       color: Color(0xFF039BE5),
-      heroImagePath: 'assets/img/meme4.png',
+      //heroImagePath: 'assets/img/meme4.png',
       title: Text(
         "What is your name?",
         style: TextStyle(
@@ -107,7 +107,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     ),
     PageModel(
       color: Color(0xFF039BE5),
-      heroImagePath: 'assets/img/meme4.png',
+      //heroImagePath: 'assets/img/meme4.png',
       title: Text(
         "What is your email?",
         style: TextStyle(
@@ -127,7 +127,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     ),
     PageModel(
       color: Color(0xFF039BE5),
-      heroImagePath: 'assets/img/meme4.png',
+      //heroImagePath: 'assets/img/meme4.png',
       title: Text(
         "What is your password?",
         style: TextStyle(
