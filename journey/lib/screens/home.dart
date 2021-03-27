@@ -2,6 +2,36 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:journey/music_selection.dart';
+import 'package:journey/questionnair/mood.dart';
+
+// Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a>
+class Quote {
+  final String text;
+  final String author;
+  final String html;
+  Quote({this.text, this.author, this.html});
+
+  factory Quote.fromJson(List<dynamic> json) {
+    return Quote(
+      text: json[0]['q'],
+      author: json[0]['a'],
+      html: json[0]['h'],
+    );
+  }
+}
+
+Future<Quote> _getQuote() async {
+  final res = await http.get(Uri.https('zenquotes.io', "api/today"));
+  if (res.statusCode == 200)
+  {
+    return Quote.fromJson(json.decode(res.body));
+  }
+  else
+  {
+    throw Exception("Failed to load");
+  }
+}
 
 class HomeView extends StatefulWidget {
   static const routeName = '/home';
@@ -12,12 +42,24 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
 
-  Widget build(BuildContext context) {
+  Future<Quote> quote;
 
+  @override
+  void initState() {
+    super.initState();
+    quote = _getQuote();
+  }
+
+  Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
 
     final newEntry = FloatingActionButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Question()),
+        );
+      },
       child: const Icon(Icons.add),
       backgroundColor: Colors.blue,
     );
@@ -29,37 +71,32 @@ class _HomeViewState extends State<HomeView> {
       padding: const EdgeInsets.all(30),
       child: Column(
         children: <Widget>[
-          Spacer(),
+          SizedBox(height: mediaQuery.padding.top),
 
           Container(
             height: 50,
             width: mediaQuery.size.width,
-            child: Text(
-              "Good Afternoon, User",
-              textAlign: TextAlign.left,
-              style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0)
-            ),
+            child: Text("Good Afternoon, User",
+                textAlign: TextAlign.left,
+                style: DefaultTextStyle.of(context)
+                    .style
+                    .apply(fontSizeFactor: 2.0)),
           ),
 
           Spacer(),
 
           Container(
             height: 50,
-            child: Text(
-              "Reflection Question"
-            ),
+            child: Text("Reflection Question"),
           ),
 
           Spacer(),
 
           Container(
-            height: 200,
-            width: mediaQuery.size.width,
-            color: Colors.black,
-            child: Text(
-              "Spotify Recommendations"
-            )
-          ),
+              height: 200,
+              width: mediaQuery.size.width,
+              color: Colors.black,
+              child: Text("Spotify Recommendations")),
 
           Spacer(),
 
@@ -71,23 +108,31 @@ class _HomeViewState extends State<HomeView> {
             color: Colors.white,
           ),
 
-          // FutureBuilder(
-          //   future: _getQuote(),
-          //   builder: (context, snapshot) {
-          //     return snapshot.connectionState == ConnectionState.done
-          //       ? Center(
-          //           child: Text(
-          //           snapshot.data,
-          //           textAlign: TextAlign.center,
-          //         ))
-          //       : Center(child: CircularProgressIndicator());
-          //   }
-          // ),
+          FutureBuilder<Quote>(
+          future: quote,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return SafeArea(
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(top: 50.0),
+                    ),
+                    Text(snapshot.data.text),
+                    Text("-- ${snapshot.data.author}"),
+                  ],
+                ),
+              );
+            } else if (snapshot.hasError) {
+              return Text("${snapshot.error}");
+            }
+            // By default, show a loading spinner.
+            return CircularProgressIndicator();
+            },
+          ),
 
           Spacer(flex: 2),
-        ]
-      )
-    );
+        ]));
 
     return Scaffold(
       body: pageBody,
@@ -96,7 +141,3 @@ class _HomeViewState extends State<HomeView> {
   }
 }
 
-// Future<String> _getQuote() async {
-//   final res = await http.get('https://zenquotes.io/api/today');
-//   return json.decode(res.body)['q']['a']['d'];
-// }
