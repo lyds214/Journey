@@ -14,7 +14,7 @@ class Tabs extends StatefulWidget {
 
 class _TabsState extends State<Tabs> {
 
-  static const List<Widget> _pages = [
+  List<Widget> _pages = [
     HomeView(),
     EntryView(),
     ProfileView(),
@@ -31,9 +31,6 @@ class _TabsState extends State<Tabs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
-      ),
       body: Center(
         child: _pages.elementAt(_selectedIndex),
       ),
@@ -66,8 +63,4 @@ class _TabsState extends State<Tabs> {
       ),
     );
   }
-}
-
-
-    );
 }
