@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>777508240285-cq7us0ube31o9cib4m4d5ucfp2e3i5m2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.777508240285-cq7us0ube31o9cib4m4d5ucfp2e3i5m2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDZwDL95Gl1aNt-wvpa3nCUdBdQ4z96KXc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>777508240285</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.brenden-smith.journey</string>
+	<key>PROJECT_ID</key>
+	<string>journey-8460d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>journey-8460d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:777508240285:ios:e95c21980120a550b70d74</string>
+</dict>
+</plist>
