@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:journey/onboarding_screen.dart';
 
 // Views
 import './screens/home.dart';
@@ -16,18 +17,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeView(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body:
-        Text("Test"),
     );
   }
 }
