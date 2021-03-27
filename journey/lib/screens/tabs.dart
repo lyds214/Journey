@@ -55,7 +55,7 @@ class _TabsState extends State<Tabs> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.purple[900],
         onTap: _onItemTap,
       ),
     );
