@@ -24,7 +24,7 @@ class _ProfileViewState extends State<ProfileView> {
               Container(
                 height: 50,
                 // width: mediaQuery.size.width,
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.topLeft,
                 child: Text("Profile",
                     textAlign: TextAlign.left,
                     style: DefaultTextStyle.of(context)
@@ -58,7 +58,7 @@ class _ProfileViewState extends State<ProfileView> {
           ),
 
           Spacer(),
-          
+
         ],
       )
     );
