@@ -18,13 +18,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        appBarTheme: AppBarTheme(color: Color(0xFF4A14C)),
         scaffoldBackgroundColor: Colors.purple[900],
         textTheme: GoogleFonts.openSansTextTheme(
           TextTheme(
             bodyText1: TextStyle(),
             bodyText2: TextStyle(),
           ).apply(
-            bodyColor: Colors.white, 
+            bodyColor: Colors.white,
             displayColor: Colors.blue,
           ),
         ),
