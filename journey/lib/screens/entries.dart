@@ -17,7 +17,6 @@ class EntryView extends StatefulWidget {
 }
 
 class _EntryViewState extends State<EntryView> {
-
   // Moods: 1 worst, 5 best
   // Music: 1 happy, 2 sad, 3 angry, 4 calm
 
@@ -26,11 +25,11 @@ class _EntryViewState extends State<EntryView> {
     Entry(DateTime.now(), 2, 2, "Bad"),
     Entry(DateTime.now(), 3, 4, "Neutral"),
     Entry(DateTime.now(), 3, 4, "Okay"),
-    Entry(DateTime.now(), 5, 1, "WOW IM SO HAPPY! The new Attack on Titan episode came out!")
+    Entry(DateTime.now(), 5, 1,
+        "WOW IM SO HAPPY! The new Attack on Titan episode came out!")
   ];
 
   Widget build(BuildContext context) {
-    
     final mediaQuery = MediaQuery.of(context);
 
     final pageBody = SingleChildScrollView(
@@ -44,11 +43,11 @@ class _EntryViewState extends State<EntryView> {
           Container(
             height: 50,
             width: mediaQuery.size.width,
-            child: Text(
-              "Entries",
-              textAlign: TextAlign.left,
-              style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0)
-            ),
+            child: Text("Entries",
+                textAlign: TextAlign.left,
+                style: DefaultTextStyle.of(context)
+                    .style
+                    .apply(fontSizeFactor: 2.0)),
           ),
           Container(
             height: (mediaQuery.size.height),
