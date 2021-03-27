@@ -52,7 +52,7 @@ class _EntryViewState extends State<EntryView> {
           ),
           Container(
             height: (mediaQuery.size.height -
-          mediaQuery.padding.top - ),
+          mediaQuery.padding.top),
             child: ListView.builder(
               itemCount: _demo.length,
               itemBuilder: (context, index) {
