@@ -36,7 +36,7 @@ class _QuestionState extends State<Question> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     IconButton(
-                      icon: Icon(Icons.face_outlined),
+                      icon: Icon(Icons.mood_bad),
                       color: Colors.white,
                       iconSize: 60,
                       onPressed: () {
@@ -49,7 +49,7 @@ class _QuestionState extends State<Question> {
                     ),
                     SizedBox(width: 5),
                     IconButton(
-                      icon: Icon(Icons.face_outlined),
+                      icon: Icon(Icons.sentiment_dissatisfied_outlined),
                       color: Colors.white,
                       iconSize: 60,
                       onPressed: () {
@@ -62,7 +62,7 @@ class _QuestionState extends State<Question> {
                     ),
                     SizedBox(width: 5),
                     IconButton(
-                      icon: Icon(Icons.face_outlined),
+                      icon: Icon(Icons.sentiment_neutral),
                       color: Colors.white,
                       iconSize: 60,
                       onPressed: () {
@@ -75,7 +75,7 @@ class _QuestionState extends State<Question> {
                     ),
                     SizedBox(width: 5),
                     IconButton(
-                      icon: Icon(Icons.face_outlined),
+                      icon: Icon(Icons.sentiment_satisfied_alt),
                       color: Colors.white,
                       iconSize: 60,
                       onPressed: () {
@@ -88,7 +88,7 @@ class _QuestionState extends State<Question> {
                     ),
                     SizedBox(width: 5),
                     IconButton(
-                      icon: Icon(Icons.face_outlined),
+                      icon: Icon(Icons.sentiment_very_satisfied),
                       color: Colors.white,
                       iconSize: 60,
                       onPressed: () {
