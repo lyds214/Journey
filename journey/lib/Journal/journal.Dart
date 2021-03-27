@@ -14,9 +14,9 @@ class JournalState extends State<Journal> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text("Journal"),
-        centerTitle: true,
+        // backgroundColor: Colors.purple,
+         title: Text("Journal"),
+        // centerTitle: true,
         elevation: 0,
       ),
       key: _formKey,
