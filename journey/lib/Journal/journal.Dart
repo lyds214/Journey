@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class Journal extends StatefulWidget {
   @override
@@ -14,19 +15,24 @@ class JournalState extends State<Journal> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: Colors.purple,
-         title: Text("Journal"),
-        // centerTitle: true,
-        elevation: 0,
+        title: Container(
+          child: Row(
+            children: <Widget>[
+              Icon(Icons.date_range),
+              Text('${DateFormat.yMMMd().format(DateTime.now())}'),
+            ],
+          ),
+        ),
       ),
       key: _formKey,
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextFormField(
             decoration: const InputDecoration(
               hintText: 'Title',
             ),
+            keyboardType: TextInputType.multiline,
+            maxLines: null,
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please create a title';
@@ -37,6 +43,7 @@ class JournalState extends State<Journal> {
           TextFormField(
             decoration: const InputDecoration(
               hintText: 'Journal',
+              border: InputBorder.none,
             ),
             keyboardType: TextInputType.multiline,
             maxLines: null,
