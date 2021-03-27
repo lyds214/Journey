@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 class HomeView extends StatefulWidget {
   static const routeName = '/home';
@@ -68,6 +71,19 @@ class _HomeViewState extends State<HomeView> {
             color: Colors.white,
           ),
 
+          // FutureBuilder(
+          //   future: _getQuote(),
+          //   builder: (context, snapshot) {
+          //     return snapshot.connectionState == ConnectionState.done
+          //       ? Center(
+          //           child: Text(
+          //           snapshot.data,
+          //           textAlign: TextAlign.center,
+          //         ))
+          //       : Center(child: CircularProgressIndicator());
+          //   }
+          // ),
+
           Spacer(flex: 2),
         ]
       )
@@ -79,3 +95,8 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 }
+
+// Future<String> _getQuote() async {
+//   final res = await http.get('https://zenquotes.io/api/today');
+//   return json.decode(res.body)['q']['a']['d'];
+// }
