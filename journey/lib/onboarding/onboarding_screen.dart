@@ -105,6 +105,7 @@ class _OnBoardingState extends State<OnBoarding> {
   ];
 
   NavigateToTabs() async {
+    return Tabs();
     /// update onbaording status of current user
     // await DatabaseService().updateOnboardingStatus(uid)
     //     .then((value) {
@@ -124,10 +125,10 @@ class _OnBoardingState extends State<OnBoarding> {
         doneButtonText: "Done",
         skipButtonText: "Skip",
         onDoneButtonPressed: () =>
-            Tabs(),
+            NavigateToTabs(),
         // Navigator.of(context).pushNamed(StudentTabs.routeName),
         onSkipButtonPressed: () =>
-            Tabs(),
+            NavigateToTabs(),
         // Navigator.of(context).pushNamed(StudentTabs.routeName),
         pageList: pageList,
       ),
