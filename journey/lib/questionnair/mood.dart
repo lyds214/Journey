@@ -9,36 +9,39 @@ class Question extends StatefulWidget {
 class _QuestionState extends State<Question> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-      ),
-      body: Column(
+
+    final mediaQuery = MediaQuery.of(context);
+
+    final pageBody = Container(
+      height: (mediaQuery.size.height -
+          mediaQuery.padding.top),
+      width: mediaQuery.size.width,
+      padding: const EdgeInsets.all(30),
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(20, 100, 20, 100),
+          SizedBox(height: mediaQuery.padding.top),
+          Container(
               child: Text(
                 "How are you feeling today?",
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 30,
                 ),
               ),
-            ),
           ),
+          Spacer(),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.fromLTRB(6, 100, 5, 1),
+              Container(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     IconButton(
                       icon: Icon(Icons.mood_bad),
                       color: Colors.white,
-                      iconSize: 60,
+                      iconSize: 50,
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -51,7 +54,7 @@ class _QuestionState extends State<Question> {
                     IconButton(
                       icon: Icon(Icons.sentiment_dissatisfied_outlined),
                       color: Colors.white,
-                      iconSize: 60,
+                      iconSize: 50,
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -64,7 +67,7 @@ class _QuestionState extends State<Question> {
                     IconButton(
                       icon: Icon(Icons.sentiment_neutral),
                       color: Colors.white,
-                      iconSize: 60,
+                      iconSize: 50,
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -77,7 +80,7 @@ class _QuestionState extends State<Question> {
                     IconButton(
                       icon: Icon(Icons.sentiment_satisfied_alt),
                       color: Colors.white,
-                      iconSize: 60,
+                      iconSize: 50,
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -90,7 +93,7 @@ class _QuestionState extends State<Question> {
                     IconButton(
                       icon: Icon(Icons.sentiment_very_satisfied),
                       color: Colors.white,
-                      iconSize: 60,
+                      iconSize: 50,
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -104,8 +107,17 @@ class _QuestionState extends State<Question> {
               )
             ],
           ),
+          Spacer(flex: 2),
         ],
       ),
+    );
+
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.purple[900],
+      ),
+      body: pageBody,
     );
   }
 }

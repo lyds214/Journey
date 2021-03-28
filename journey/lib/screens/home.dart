@@ -74,7 +74,7 @@ class _HomeViewState extends State<HomeView> {
       padding: const EdgeInsets.all(30),
       child: Column(
         children: <Widget>[
-          SizedBox(height: mediaQuery.padding.top / 2),
+          SizedBox(height: mediaQuery.padding.top),
 
           Container(
             height: 50,
@@ -89,22 +89,15 @@ class _HomeViewState extends State<HomeView> {
           Spacer(),
 
           Container(
-            height: 50,
-            child: Text("Reflection Question"),
-          ),
-
-          Spacer(),
-
-          Container(
               height: 200,
               width: mediaQuery.size.width,
               color: Colors.black,
               child: Text("Spotify Recommendations")),
 
-          Spacer(flex: 3),
+          Spacer(),
 
           Container(
-            height: 300,
+            height: 250,
             child: FutureBuilder<Quote>(
               future: quote,
               builder: (context, snapshot) {
@@ -159,7 +152,7 @@ class _HomeViewState extends State<HomeView> {
               ),
           ),
 
-          Spacer(),
+          SizedBox(height: mediaQuery.padding.bottom),
         ]));
 
     return Scaffold(

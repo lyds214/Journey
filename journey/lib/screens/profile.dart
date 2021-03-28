@@ -18,7 +18,7 @@ class _ProfileViewState extends State<ProfileView> {
       padding: const EdgeInsets.all(30),
       child: Column(
         children: <Widget>[
-          SizedBox(height: mediaQuery.padding.top / 2),
+          SizedBox(height: mediaQuery.padding.top),
           Row(
             children: <Widget>[
               Container(
@@ -32,16 +32,12 @@ class _ProfileViewState extends State<ProfileView> {
                         .apply(fontSizeFactor: 2.0)),
               ),
               Spacer(),
-              Container(
-                height: 50,
-                child: 
-                  IconButton(
-                    icon: Icon(
-                      Icons.settings,
-                      color: Colors.white,
-                    ),
-                    onPressed: () {},
-                  ),
+              IconButton(
+                icon: Icon(
+                  Icons.settings,
+                  color: Colors.white,
+                ),
+                onPressed: () {},
               ),
             ]
           ),
