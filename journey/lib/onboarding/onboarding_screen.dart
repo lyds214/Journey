@@ -27,7 +27,7 @@ class _OnBoardingState extends State<OnBoarding> {
   final pageList = [
     PageModel(
       color: Color(0xFF4527A0),
-      heroImagePath: 'assets/img/meme1.jpg',
+      heroImagePath: 'assets/img/img1.png',
       title: Text(
         "Welcome to Journey!",
         style: TextStyle(
@@ -41,7 +41,7 @@ class _OnBoardingState extends State<OnBoarding> {
     ),
     PageModel(
       color: Color(0xFF512DA8),
-      heroImagePath: 'assets/img/meme2.jpg',
+      heroImagePath: 'assets/img/img2.jpg',
       title: Text(
         "Purpose",
         style: TextStyle(
@@ -62,7 +62,7 @@ class _OnBoardingState extends State<OnBoarding> {
     ),
     PageModel(
       color: Color(0xFF5E35B1),
-      heroImagePath: 'assets/img/meme3.png',
+      heroImagePath: 'assets/img/img3.png',
       title: Text(
         "Give and Take",
         style: TextStyle(
