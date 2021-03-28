@@ -60,7 +60,6 @@ class _HomeViewState extends State<HomeView> {
           context,
           MaterialPageRoute(builder: (context) => Question()),
         );
-        global.demo.add(Entry(DateTime.now(), 1, 0, "Test"));
       },
       child: const Icon(Icons.add),
       backgroundColor: Colors.white,
