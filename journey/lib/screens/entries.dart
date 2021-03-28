@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../demo.dart' as global;
 import '../entry.dart';
+import 'view.dart';
 
 class EntryView extends StatefulWidget {
   static const routeName = '/Entry';
@@ -99,7 +100,13 @@ class _EntryViewState extends State<EntryView> {
         ],
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+              MaterialPageRoute(
+                builder: (context) => View(item: item)),
+          );
+        },
         child: Row(
           children: <Widget>[
             Padding(padding: const EdgeInsets.all(5)),
