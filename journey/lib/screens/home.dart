@@ -4,6 +4,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:journey/music_selection.dart';
 import 'package:journey/questionnair/mood.dart';
+import '../demo.dart' as global;
+import '../entry.dart';
 import 'package:journey/screens/youtube/home.dart';
 
 // Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a>
@@ -54,10 +56,11 @@ class _HomeViewState extends State<HomeView> {
 
     final newEntry = FloatingActionButton(
       onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Question()),
-        );
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(builder: (context) => Question()),
+        // );
+        global.demo.add(Entry(DateTime.now(), 1, 0, "Test"));
       },
       child: const Icon(Icons.add),
       backgroundColor: Colors.white,
