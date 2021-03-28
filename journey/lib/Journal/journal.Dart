@@ -16,6 +16,8 @@ class JournalState extends State<Journal> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.purple[900],
+        elevation: 0,
         title: Container(
           child: Row(
             children: <Widget>[
