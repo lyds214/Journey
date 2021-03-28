@@ -16,11 +16,12 @@ class Journey extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Journey',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         appBarTheme: AppBarTheme(color: Color(0xFF4A14C)),
         scaffoldBackgroundColor: Colors.purple[900],
-        textTheme: GoogleFonts.openSansTextTheme(
+        textTheme: GoogleFonts.montserratTextTheme(
           TextTheme(
             bodyText1: TextStyle(),
             bodyText2: TextStyle(),

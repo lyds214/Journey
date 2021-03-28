@@ -39,7 +39,7 @@ class _EntryViewState extends State<EntryView> {
       padding: const EdgeInsets.all(30),
       child: Column(
         children: <Widget>[
-          SizedBox(height: mediaQuery.padding.top / 2),
+          SizedBox(height: mediaQuery.padding.top),
           Container(
             height: 50,
             width: mediaQuery.size.width,
