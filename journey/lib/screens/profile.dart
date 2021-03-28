@@ -39,6 +39,7 @@ class _ProfileViewState extends State<ProfileView> {
             ]),
             Spacer(),
             Container(
+              height: 600,
               child: GridView.count(
                 primary: false,
                 padding: const EdgeInsets.all(20),
@@ -47,34 +48,43 @@ class _ProfileViewState extends State<ProfileView> {
                 crossAxisCount: 2,
                 children: <Widget>[
                   Container(
-                    padding: const EdgeInsets.all(8),
-                    child: const Text("He'd have you all unravel at the"),
-                    color: Colors.teal[100],
+                    // decoration: BoxDecoration(
+                    //   borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    // ),
+                    padding: const EdgeInsets.all(30),
+                    child: const Text(
+                      "Your most common mood this month is HAPPY with 5 instances",
+                      style: TextStyle(color: Colors.black),
+                      textAlign: TextAlign.center,
+                    ),
+                    color: Colors.white,
                   ),
                   Container(
-                    padding: const EdgeInsets.all(8),
-                    child: const Text('Heed not the rabble'),
-                    color: Colors.teal[200],
+                    padding: const EdgeInsets.all(30),
+                    child: const Text(
+                      "You have created 5 entries!",
+                      style: TextStyle(color: Colors.black),
+                      textAlign: TextAlign.center,
+                    ),
+                    color: Colors.white,
                   ),
                   Container(
-                    padding: const EdgeInsets.all(8),
-                    child: const Text('Sound of screams but the'),
-                    color: Colors.teal[300],
+                    padding: const EdgeInsets.all(30),
+                    child: const Text(
+                      "Start building great habits",
+                      style: TextStyle(color: Colors.black),
+                      textAlign: TextAlign.center,
+                    ),
+                    color: Colors.white,
                   ),
                   Container(
-                    padding: const EdgeInsets.all(8),
-                    child: const Text('Who scream'),
-                    color: Colors.teal[400],
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    child: const Text('Revolution is coming...'),
-                    color: Colors.teal[500],
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    child: const Text('Revolution, they...'),
-                    color: Colors.teal[600],
+                    padding: const EdgeInsets.all(30),
+                    child: const Text(
+                      "Contact support",
+                      style: TextStyle(color: Colors.black),
+                      textAlign: TextAlign.center,
+                    ),
+                    color: Colors.white,
                   ),
                 ],
               ),
@@ -86,14 +96,6 @@ class _ProfileViewState extends State<ProfileView> {
               // ),
             ),
             Spacer(),
-            Container(
-              child: Text(
-                "You journaled 5 times this month. Great job!",
-                style: TextStyle(
-                  fontSize: 30,
-                ),
-              ),
-            ),
             Spacer(flex: 3),
           ],
         ));
