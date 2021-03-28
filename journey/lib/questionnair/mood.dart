@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:journey/music_selection.dart';
+import '../Journal/journal.dart';
 
 class Question extends StatefulWidget {
   @override
@@ -46,7 +47,7 @@ class _QuestionState extends State<Question> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MusicSelection(mood: 1,)),
+                              builder: (context) => Journal(mood: 1, music: 0)),
                         );
                       },
                     ),
@@ -59,7 +60,7 @@ class _QuestionState extends State<Question> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MusicSelection(mood: 2,)),
+                              builder: (context) => Journal(mood: 2, music: 0)),
                         );
                       },
                     ),
@@ -72,7 +73,7 @@ class _QuestionState extends State<Question> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MusicSelection(mood: 3,)),
+                              builder: (context) => Journal(mood: 3, music: 0)),
                         );
                       },
                     ),
@@ -85,7 +86,7 @@ class _QuestionState extends State<Question> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MusicSelection(mood: 4,)),
+                              builder: (context) => Journal(mood: 4, music: 0)),
                         );
                       },
                     ),
@@ -98,7 +99,7 @@ class _QuestionState extends State<Question> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MusicSelection(mood: 5,)),
+                              builder: (context) => Journal(mood: 5, music: 0)),
                         );
                       },
                     ),

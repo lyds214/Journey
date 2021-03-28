@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:journey/Journal/journal.dart';
 
+// This was an intended feature, but unfortunately was not able to be seen to fruition.
+
 class MusicSelection extends StatefulWidget {
   final int mood;
   MusicSelection({this.mood});
