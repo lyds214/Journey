@@ -11,25 +11,17 @@ import 'entry.dart';
 
 void main() {
   globals.demo = [
-    Entry(DateTime.now(), 1, 3, "Terrible"),
-    Entry(DateTime.now(), 2, 2, "Bad"),
-    Entry(DateTime.now(), 3, 4, "Neutral"),
-    Entry(DateTime.now(), 3, 4, "Okay"),
-    Entry(DateTime.now(), 5, 1,
-        "WOW IM SO HAPPY! The new Attack on Titan episode came out!")
+    Entry(DateTime.now(), 1, 3, "Bad day", "I had a terrible day!"),
+    Entry(DateTime.now(), 2, 2, "Sad day", "I am having a sad day today."),
+    Entry(DateTime.now(), 3, 4, "Neutral day", "Today has been alright."),
+    Entry(DateTime.now(), 3, 4, "OK day", "Today was better than yesterday"),
+    Entry(DateTime.now(), 5, 1, "Great day!",
+        "WOW IM SO HAPPY! Today has been the greatest day!")
   ];
   runApp(Journey());
 }
 
 class Journey extends StatelessWidget {
-  List<Entry> demo = [
-    Entry(DateTime.now(), 1, 3, "Terrible"),
-    Entry(DateTime.now(), 2, 2, "Bad"),
-    Entry(DateTime.now(), 3, 4, "Neutral"),
-    Entry(DateTime.now(), 3, 4, "Okay"),
-    Entry(DateTime.now(), 5, 1,
-        "WOW IM SO HAPPY! The new Attack on Titan episode came out!")
-  ];
 
   @override
   Widget build(BuildContext context) {

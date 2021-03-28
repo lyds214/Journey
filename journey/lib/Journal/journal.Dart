@@ -12,38 +12,9 @@ class Journal extends StatefulWidget {
 class JournalState extends State<Journal> {
   final _formKey = GlobalKey<FormState>();
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.purple[900],
-        elevation: 0,
-        title: Container(
-          child: Row(
-            children: <Widget>[
-              Icon(Icons.date_range),
-              Text('${DateFormat.yMMMd().format(DateTime.now())}'),
-            ],
-          ),
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.check,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Tabs()),
-                        );
-            },
-          )
-        ],
-      ),
-      key: _formKey,
-      body: Column(
+  final pageBody = SingleChildScrollView(
+    padding: const EdgeInsets.all(30),
+    child: Column(
         children: <Widget>[
           TextFormField(
             style: TextStyle(
@@ -86,6 +57,40 @@ class JournalState extends State<Journal> {
           ),
         ],
       ),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.purple[900],
+        elevation: 0,
+        title: Container(
+          child: Row(
+            children: <Widget>[
+              Icon(Icons.date_range),
+              Text('${DateFormat.yMMMd().format(DateTime.now())}'),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.check,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Tabs()),
+                        );
+            },
+          )
+        ],
+      ),
+      key: _formKey,
+      body: pageBody,
     );
   }
 }

@@ -55,6 +55,17 @@ class _ProfileViewState extends State<ProfileView> {
 
           Spacer(),
 
+          Container(
+            child: Text(
+              "You journaled 5 times this month. Great job!",
+              style: TextStyle(
+                fontSize: 30,
+              ),
+            ),
+          ),
+
+          Spacer(flex: 3),
+
         ],
       )
     );

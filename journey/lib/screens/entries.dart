@@ -154,9 +154,9 @@ class _EntryViewState extends State<EntryView> {
                     height: 30,
                     padding: const EdgeInsets.only(bottom: 5, right: 5),
                     child: Text(
-                        (item.journal.length > 35)
-                            ? '${item.journal.substring(0, 35)}...'
-                            : '${item.journal}',
+                        (item.title.length > 35)
+                            ? '${item.title.substring(0, 35)}...'
+                            : '${item.title}',
                         textAlign: TextAlign.left,
                         style: TextStyle(color: Colors.purple[900], fontSize: 15)),
                   ),
