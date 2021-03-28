@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   _initChannel() async {
     Channel channel = await APIService.instance
-        .fetchChannel(channelId: 'UC6Dy0rQ6zDnQuHQ1EeErGUA');
+        .fetchChannel(channelId: 'UCSJ4gkVC6NrvII8umztf0Ow');
     setState(() {
       _channel = channel;
     });
@@ -138,11 +138,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('YouTube Channel'),
-      ),
-      body: _channel != null
+    // return Scaffold(
+      // appBar: AppBar(
+      //   title: Text('YouTube Channel'),
+      // ),
+      // body:
+    return _channel != null
           ? NotificationListener<ScrollNotification>(
         onNotification: (ScrollNotification scrollDetails) {
           if (!_isLoading &&
@@ -170,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Theme.of(context).primaryColor, // Red
           ),
         ),
-      ),
-    );
+      );
+    // );
   }
 }

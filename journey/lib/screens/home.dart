@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:journey/music_selection.dart';
 import 'package:journey/questionnair/mood.dart';
+import 'package:journey/screens/youtube/home.dart';
 
 // Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a>
 class Quote {
@@ -99,7 +100,7 @@ class _HomeViewState extends State<HomeView> {
               height: 200,
               width: mediaQuery.size.width,
               color: Colors.black,
-              child: Text("Spotify Recommendations")),
+              child: HomeScreen()),
 
           Spacer(flex: 3),
 
