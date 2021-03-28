@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:journey/screens/entries.dart';
 
 class Journal extends StatefulWidget {
   @override
@@ -23,6 +24,20 @@ class JournalState extends State<Journal> {
             ],
           ),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.settings,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => EntryView()),
+              );
+            },
+          )
+        ],
       ),
       key: _formKey,
       body: Column(
@@ -30,6 +45,9 @@ class JournalState extends State<Journal> {
           TextFormField(
             decoration: const InputDecoration(
               hintText: 'Title',
+              hintStyle: TextStyle(
+                color: Colors.white,
+              ),
             ),
             keyboardType: TextInputType.multiline,
             maxLines: null,
@@ -43,6 +61,9 @@ class JournalState extends State<Journal> {
           TextFormField(
             decoration: const InputDecoration(
               hintText: 'Journal',
+              hintStyle: TextStyle(
+                color: Colors.white,
+              ),
               border: InputBorder.none,
             ),
             keyboardType: TextInputType.multiline,
