@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:journey/entry.dart';
 import 'package:journey/screens/entries.dart';
 import '../demo.dart' as global;
+import 'package:journey/screens/tabs.dart';
 
 class Journal extends StatefulWidget {
   final int mood;
@@ -24,6 +25,8 @@ class JournalState extends State<Journal> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.purple[900],
+        elevation: 0,
         title: Container(
           child: Row(
             children: <Widget>[
@@ -46,11 +49,10 @@ class JournalState extends State<Journal> {
                 _titleController.text,
               ));
               Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => EntryView(),
-                ),
-              );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Tabs()),
+                        );
             },
           )
         ],
@@ -59,6 +61,9 @@ class JournalState extends State<Journal> {
       body: Column(
         children: <Widget>[
           TextFormField(
+            style: TextStyle(
+              color: Colors.white,
+            ),
             controller: _titleController,
             decoration: const InputDecoration(
               hintText: 'Title',
@@ -76,6 +81,9 @@ class JournalState extends State<Journal> {
             },
           ),
           TextFormField(
+            style: TextStyle(
+              color: Colors.white,
+            ),
             decoration: const InputDecoration(
               hintText: 'Journal',
               hintStyle: TextStyle(

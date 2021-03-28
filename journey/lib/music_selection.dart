@@ -15,6 +15,7 @@ class _MusicSelectionState extends State<MusicSelection> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
+        backgroundColor: Colors.purple[900],
       ),
       body: Padding(
         padding: EdgeInsets.all(55),

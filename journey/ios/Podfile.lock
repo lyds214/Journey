@@ -281,6 +281,13 @@ PODS:
     - GoogleUtilities/UserDefaults (~> 6.7)
     - PromisesObjC (~> 1.2)
   - Flutter (1.0.0)
+  - flutter_inappwebview (0.0.1):
+    - Flutter
+    - flutter_inappwebview/Core (= 0.0.1)
+    - OrderedSet (~> 5.0)
+  - flutter_inappwebview/Core (0.0.1):
+    - Flutter
+    - OrderedSet (~> 5.0)
   - GoogleAppMeasurement (6.9.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
@@ -339,6 +346,7 @@ PODS:
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
+  - OrderedSet (5.0.0)
   - path_provider (0.0.1):
     - Flutter
   - PromisesObjC (1.2.12)
@@ -348,6 +356,7 @@ DEPENDENCIES:
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - Flutter (from `Flutter`)
+  - flutter_inappwebview (from `.symlinks/plugins/flutter_inappwebview/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
 
 SPEC REPOS:
@@ -369,6 +378,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - OrderedSet
     - PromisesObjC
 
 EXTERNAL SOURCES:
@@ -380,6 +390,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_core/ios"
   Flutter:
     :path: Flutter
+  flutter_inappwebview:
+    :path: ".symlinks/plugins/flutter_inappwebview/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
 
@@ -397,6 +409,7 @@ SPEC CHECKSUMS:
   FirebaseFirestore: 9b2f1b9b9a6f2f0b6fb7484b9e32ab7e39243554
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  flutter_inappwebview: bfd58618f49dc62f2676de690fc6dcda1d6c3721
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
@@ -405,6 +418,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
+  OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
