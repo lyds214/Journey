@@ -56,10 +56,10 @@ class _HomeViewState extends State<HomeView> {
 
     final newEntry = FloatingActionButton(
       onPressed: () {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(builder: (context) => Question()),
-        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Question()),
+        );
         global.demo.add(Entry(DateTime.now(), 1, 0, "Test"));
       },
       child: const Icon(Icons.add),

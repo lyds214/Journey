@@ -30,7 +30,13 @@ class JournalState extends State<Journal> {
               Icons.check,
               color: Colors.white,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => EntryView()),
+                        );
+            },
           )
         ],
       ),
