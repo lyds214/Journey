@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
-// Temporary entry class
-class Entry {
-  DateTime date;
-  int mood;
-  int music;
-  String journal;
-  Entry(this.date, this.mood, this.music, this.journal);
-}
+import '../demo.dart' as global;
+import '../entry.dart';
 
 class EntryView extends StatefulWidget {
   static const routeName = '/Entry';
@@ -20,14 +13,14 @@ class _EntryViewState extends State<EntryView> {
   // Moods: 1 worst, 5 best
   // Music: 1 happy, 2 sad, 3 angry, 4 calm
 
-  List<Entry> _demo = [
-    Entry(DateTime.now(), 1, 3, "Terrible"),
-    Entry(DateTime.now(), 2, 2, "Bad"),
-    Entry(DateTime.now(), 3, 4, "Neutral"),
-    Entry(DateTime.now(), 3, 4, "Okay"),
-    Entry(DateTime.now(), 5, 1,
-        "WOW IM SO HAPPY! The new Attack on Titan episode came out!")
-  ];
+  // List<Entry> _demo = [
+  //   Entry(DateTime.now(), 1, 3, "Terrible"),
+  //   Entry(DateTime.now(), 2, 2, "Bad"),
+  //   Entry(DateTime.now(), 3, 4, "Neutral"),
+  //   Entry(DateTime.now(), 3, 4, "Okay"),
+  //   Entry(DateTime.now(), 5, 1,
+  //       "WOW IM SO HAPPY! The new Attack on Titan episode came out!")
+  // ];
 
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -53,9 +46,9 @@ class _EntryViewState extends State<EntryView> {
           Container(
             height: (mediaQuery.size.height),
             child: ListView.separated(
-              itemCount: _demo.length,
+              itemCount: global.demo.length,
               itemBuilder: (context, index) {
-                return EntryCard(_demo[index]);
+                return EntryCard(global.demo[index]);
               },
               separatorBuilder: (context, index) {
                 return Padding(padding: const EdgeInsets.all(15));
