@@ -23,15 +23,15 @@ class _ViewState extends State<View> {
       padding: const EdgeInsets.all(30),
       child: Column(
         children: <Widget>[
-          SizedBox(height: mediaQuery.padding.top),
+          SizedBox(height: 15),
           Container(
             height: 50,
             width: mediaQuery.size.width,
             child: Text('${DateFormat.yMMMd().format(widget.item.date)}',
                 textAlign: TextAlign.left,
-                style: DefaultTextStyle.of(context)
-                    .style
-                    .apply(fontSizeFactor: 2.0)),
+                style: TextStyle(fontSize: 30),
+
+                ),
           ),
 
           SizedBox(height: 15),
@@ -40,19 +40,17 @@ class _ViewState extends State<View> {
             width: mediaQuery.size.width,
             child: Text('Mood: ${widget.item.mood}',
                 textAlign: TextAlign.left,
-                style: DefaultTextStyle.of(context)
-                    .style
-                    .apply(fontSizeFactor: 1.5)),
+                style: TextStyle(fontSize: 25),
+            ),
           ),
 
           SizedBox(height: 15),
           Container(
             width: mediaQuery.size.width,
-            child: Text(widget.item.journal,
+            child: Text('${widget.item.journal}',
                 textAlign: TextAlign.left,
-                style: DefaultTextStyle.of(context)
-                    .style
-                    .apply(fontSizeFactor: 1.0)),
+                style: TextStyle(fontSize: 20),
+            ),
           ),
           SizedBox(height: 50),
         ]
@@ -60,6 +58,10 @@ class _ViewState extends State<View> {
     );
 
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0.0,
+        backgroundColor: Colors.purple[900],
+      ),
       body: pageBody,
     );
   }
