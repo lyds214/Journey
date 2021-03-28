@@ -84,13 +84,44 @@ class _HomeViewState extends State<HomeView> {
                     .apply(fontSizeFactor: 2.0)),
           ),
 
-          // Spacer(),
+          Spacer(),
 
           Container(
-              height: 200,
+              height: 350,
               width: mediaQuery.size.width,
-              color: Colors.black,
-              child: HomeScreen()),
+              child: HomeScreen(),
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                border: Border(
+                  top: BorderSide(
+                    width: 1,
+                    color: Colors.grey[300],
+                  ),
+                  bottom: BorderSide(
+                    width: 1,
+                    color: Colors.grey[300],
+                  ),
+                  left: BorderSide(
+                    width: 1,
+                    color: Colors.grey[300],
+                  ),
+                  right: BorderSide(
+                    width: 1,
+                    color: Colors.grey[300],
+                  ),
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.5),
+                    spreadRadius: 3,
+                    blurRadius: 7,
+                    offset: Offset(0, 10), // changes position of shadow
+                  ),
+                ],
+              ),
+          ),
 
           Spacer(),
 

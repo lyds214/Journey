@@ -46,6 +46,16 @@ class _ViewState extends State<View> {
 
           SizedBox(height: 15),
           Container(
+            height: 50,
+            width: mediaQuery.size.width,
+            child: Text('Title: ${widget.item.title}',
+                textAlign: TextAlign.left,
+                style: TextStyle(fontSize: 23),
+            ),
+          ),
+
+          SizedBox(height: 15),
+          Container(
             width: mediaQuery.size.width,
             child: Text('${widget.item.journal}',
                 textAlign: TextAlign.left,
