@@ -24,12 +24,9 @@ class Quote {
 
 Future<Quote> _getQuote() async {
   final res = await http.get(Uri.https('zenquotes.io', "api/today"));
-  if (res.statusCode == 200)
-  {
+  if (res.statusCode == 200) {
     return Quote.fromJson(json.decode(res.body));
-  }
-  else
-  {
+  } else {
     throw Exception("Failed to load");
   }
 }
@@ -42,7 +39,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-
   bool dailyEntry;
 
   Future<Quote> quote;
@@ -69,12 +65,10 @@ class _HomeViewState extends State<HomeView> {
     );
 
     final pageBody = Container(
-      height: (mediaQuery.size.height -
-          mediaQuery.padding.top),
-      width: mediaQuery.size.width,
-      padding: const EdgeInsets.all(30),
-      child: Column(
-        children: <Widget>[
+        height: (mediaQuery.size.height - mediaQuery.padding.top),
+        width: mediaQuery.size.width,
+        padding: const EdgeInsets.all(30),
+        child: Column(children: <Widget>[
           SizedBox(height: mediaQuery.padding.top),
 
           Container(
@@ -90,7 +84,7 @@ class _HomeViewState extends State<HomeView> {
           // Spacer(),
 
           Container(
-              height: 800,
+              height: 200,
               width: mediaQuery.size.width,
               color: Colors.black,
               child: HomeScreen()),
@@ -104,53 +98,46 @@ class _HomeViewState extends State<HomeView> {
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   return SafeArea(
-                      child: Column(
-                        children: <Widget>[
-                          Divider(
-                            height: 20,
-                            thickness: 2,
-                            indent: 20,
-                            endIndent: 20,
-                            color: Colors.white,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 15.0),
-                          ),
-                          Text(
-                            snapshot.data.text,
+                    child: Column(
+                      children: <Widget>[
+                        Divider(
+                          height: 20,
+                          thickness: 2,
+                          indent: 20,
+                          endIndent: 20,
+                          color: Colors.white,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 15.0),
+                        ),
+                        Text(snapshot.data.text,
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontStyle: FontStyle.italic,
-                              fontSize: 26.0
-                              )
-                          ),
-
-                          Padding(padding: const EdgeInsets.all(15)),
-                          
-                          Text(
-                            "-- ${snapshot.data.author}",
-                          ),
-
-                          Padding(padding: const EdgeInsets.all(15)),
-
-                          Text(
+                                fontStyle: FontStyle.italic, fontSize: 26.0)),
+                        Padding(padding: const EdgeInsets.all(15)),
+                        Text(
+                          "-- ${snapshot.data.author}",
+                        ),
+                        Padding(padding: const EdgeInsets.all(15)),
+                        Text(
                             "Inspirational quotes provided by https://zenquotes.io/",
-                            style: TextStyle(fontSize: 8)
-                          ),
-                        ],
-                      ),
+                            style: TextStyle(fontSize: 8)),
+                      ],
+                    ),
                   );
                 } else if (snapshot.hasError) {
                   return Text("${snapshot.error}");
                 }
                 // By default, show a loading spinner.
                 return Container(
-                  alignment: Alignment.center,
-                  width: 100,
-                  child: CircularProgressIndicator(backgroundColor: Colors.transparent, valueColor: new AlwaysStoppedAnimation<Color>(Colors.white))
-                );
-                },
-              ),
+                    alignment: Alignment.center,
+                    width: 100,
+                    child: CircularProgressIndicator(
+                        backgroundColor: Colors.transparent,
+                        valueColor:
+                            new AlwaysStoppedAnimation<Color>(Colors.white)));
+              },
+            ),
           ),
 
           SizedBox(height: mediaQuery.padding.bottom),
@@ -162,4 +149,3 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 }
-
