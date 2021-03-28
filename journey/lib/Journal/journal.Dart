@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:journey/screens/entries.dart';
+import 'package:journey/screens/tabs.dart';
 
 class Journal extends StatefulWidget {
   @override
@@ -36,7 +36,7 @@ class JournalState extends State<Journal> {
               Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => EntryView()),
+                              builder: (context) => Tabs()),
                         );
             },
           )
