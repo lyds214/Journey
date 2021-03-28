@@ -37,7 +37,7 @@ class _OnBoardingState extends State<OnBoarding> {
         ),
       ),
       body: Text(""),
-      iconImagePath: 'assets/img/meme1.jpg',
+      iconImagePath: 'assets/img/img1.png',
     ),
     PageModel(
       color: Color(0xFF512DA8),
@@ -58,7 +58,7 @@ class _OnBoardingState extends State<OnBoarding> {
           fontSize: 18,
         ),
       ),
-      iconImagePath: 'assets/img/meme1.jpg',
+      iconImagePath: 'assets/img/img1.png',
     ),
     PageModel(
       color: Color(0xFF5E35B1),
@@ -79,7 +79,7 @@ class _OnBoardingState extends State<OnBoarding> {
           fontSize: 18,
         ),
       ),
-      iconImagePath: 'assets/img/meme1.jpg',
+      iconImagePath: 'assets/img/img1.png',
     ),
   ];
 
