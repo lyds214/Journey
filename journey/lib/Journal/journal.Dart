@@ -16,6 +16,8 @@ class JournalState extends State<Journal> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.purple[900],
+        elevation: 0,
         title: Container(
           child: Row(
             children: <Widget>[
@@ -32,9 +34,10 @@ class JournalState extends State<Journal> {
             ),
             onPressed: () {
               Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => EntryView()),
-              );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => EntryView()),
+                        );
             },
           )
         ],
@@ -43,6 +46,9 @@ class JournalState extends State<Journal> {
       body: Column(
         children: <Widget>[
           TextFormField(
+            style: TextStyle(
+              color: Colors.white,
+            ),
             decoration: const InputDecoration(
               hintText: 'Title',
               hintStyle: TextStyle(
@@ -59,6 +65,9 @@ class JournalState extends State<Journal> {
             },
           ),
           TextFormField(
+            style: TextStyle(
+              color: Colors.white,
+            ),
             decoration: const InputDecoration(
               hintText: 'Journal',
               hintStyle: TextStyle(
