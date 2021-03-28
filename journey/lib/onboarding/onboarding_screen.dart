@@ -37,7 +37,7 @@ class _OnBoardingState extends State<OnBoarding> {
         ),
       ),
       body: Text(""),
-      iconImagePath: ' ',
+      iconImagePath: 'assets/img/meme1.jpg',
     ),
     PageModel(
       color: Color(0xFF512DA8),
@@ -51,14 +51,14 @@ class _OnBoardingState extends State<OnBoarding> {
         ),
       ),
       body: Text(
-        "This app is designed to help donors distribute resources for students in need.",
+        "This app is designed to elevate and keep track of your mood.",
         textAlign: TextAlign.center,
         style: TextStyle(
           color: Colors.white,
           fontSize: 18,
         ),
       ),
-      iconImagePath: '',
+      iconImagePath: 'assets/img/meme1.jpg',
     ),
     PageModel(
       color: Color(0xFF5E35B1),
@@ -72,35 +72,14 @@ class _OnBoardingState extends State<OnBoarding> {
         ),
       ),
       body: Text(
-        "Students can create requests to their donors and receive their needs!",
+        "You can write a journal, listen to music, and track your progress!",
         textAlign: TextAlign.center,
         style: TextStyle(
           color: Colors.white,
           fontSize: 18,
         ),
       ),
-      iconImagePath: '',
-    ),
-    PageModel(
-      color: Color(0xFF673AB7),
-      heroImagePath: 'assets/img/meme4.png',
-      title: Text(
-        "Chat",
-        style: TextStyle(
-          fontSize: 34,
-          fontWeight: FontWeight.w800,
-          color: Colors.white,
-        ),
-      ),
-      body: Text(
-        "Students can chat with their donors about their needs.",
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 18,
-        ),
-      ),
-      iconImagePath: '',
+      iconImagePath: 'assets/img/meme1.jpg',
     ),
   ];
 
