@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:journey/entry.dart';
 import 'package:journey/screens/entries.dart';
+import '../demo.dart' as global;
 
 class Journal extends StatefulWidget {
+  final int mood;
+  final int music;
+
+  Journal({this.mood, this.music});
+
   @override
   JournalState createState() {
     return JournalState();
@@ -11,6 +18,7 @@ class Journal extends StatefulWidget {
 
 class JournalState extends State<Journal> {
   final _formKey = GlobalKey<FormState>();
+  TextEditingController _titleController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +39,17 @@ class JournalState extends State<Journal> {
               color: Colors.white,
             ),
             onPressed: () {
+              global.demo.add(Entry(
+                DateTime.now(),
+                widget.mood,
+                widget.music,
+                _titleController.text,
+              ));
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => EntryView()),
+                MaterialPageRoute(
+                  builder: (context) => EntryView(),
+                ),
               );
             },
           )
@@ -43,6 +59,7 @@ class JournalState extends State<Journal> {
       body: Column(
         children: <Widget>[
           TextFormField(
+            controller: _titleController,
             decoration: const InputDecoration(
               hintText: 'Title',
               hintStyle: TextStyle(
