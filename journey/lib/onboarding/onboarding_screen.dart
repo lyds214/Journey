@@ -41,7 +41,7 @@ class _OnBoardingState extends State<OnBoarding> {
     ),
     PageModel(
       color: Color(0xFF512DA8),
-      heroImagePath: 'assets/img/img2.jpg',
+      heroImagePath: 'assets/img/img3.png',
       title: Text(
         "Purpose",
         style: TextStyle(
