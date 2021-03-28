@@ -5,6 +5,7 @@ import '../entry.dart';
 import 'view.dart';
 
 class EntryView extends StatefulWidget {
+
   static const routeName = '/Entry';
 
   _EntryViewState createState() => _EntryViewState();

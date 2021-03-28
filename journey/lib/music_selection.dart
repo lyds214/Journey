@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:journey/Journal/journal.dart';
 
 class MusicSelection extends StatefulWidget {
+  final int mood;
+  MusicSelection({this.mood});
+
   @override
   _MusicSelectionState createState() => _MusicSelectionState();
 }
@@ -46,7 +49,7 @@ class _MusicSelectionState extends State<MusicSelection> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Journal()),
+                      MaterialPageRoute(builder: (context) => Journal(mood: widget.mood, music: 1)),
                     );
                   },
                 ),
@@ -70,7 +73,7 @@ class _MusicSelectionState extends State<MusicSelection> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Journal()),
+                      MaterialPageRoute(builder: (context) => Journal(mood: widget.mood, music: 2)),
                     );
                   },
                 ),
@@ -94,7 +97,7 @@ class _MusicSelectionState extends State<MusicSelection> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Journal()),
+                      MaterialPageRoute(builder: (context) => Journal(mood: widget.mood, music: 3,)),
                     );
                   },
                 ),
@@ -118,7 +121,7 @@ class _MusicSelectionState extends State<MusicSelection> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Journal()),
+                      MaterialPageRoute(builder: (context) => Journal(mood: widget.mood, music: 4,)),
                     );
                   },
                 ),

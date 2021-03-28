@@ -46,7 +46,7 @@ class _QuestionState extends State<Question> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MusicSelection()),
+                              builder: (context) => MusicSelection(mood: 1,)),
                         );
                       },
                     ),
@@ -59,7 +59,7 @@ class _QuestionState extends State<Question> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MusicSelection()),
+                              builder: (context) => MusicSelection(mood: 2,)),
                         );
                       },
                     ),
@@ -72,7 +72,7 @@ class _QuestionState extends State<Question> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MusicSelection()),
+                              builder: (context) => MusicSelection(mood: 3,)),
                         );
                       },
                     ),
@@ -85,7 +85,7 @@ class _QuestionState extends State<Question> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MusicSelection()),
+                              builder: (context) => MusicSelection(mood: 4,)),
                         );
                       },
                     ),
@@ -98,7 +98,7 @@ class _QuestionState extends State<Question> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MusicSelection()),
+                              builder: (context) => MusicSelection(mood: 5,)),
                         );
                       },
                     ),
