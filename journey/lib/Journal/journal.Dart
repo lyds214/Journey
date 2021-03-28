@@ -27,15 +27,10 @@ class JournalState extends State<Journal> {
         actions: <Widget>[
           IconButton(
             icon: Icon(
-              Icons.check,
+              Icons.settings,
               color: Colors.white,
             ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => EntryView()),
-              );
-            },
+            onPressed: () {},
           )
         ],
       ),
@@ -43,6 +38,9 @@ class JournalState extends State<Journal> {
       body: Column(
         children: <Widget>[
           TextFormField(
+            style: TextStyle(
+              color: Colors.white,
+            ),
             decoration: const InputDecoration(
               hintText: 'Title',
               hintStyle: TextStyle(
@@ -59,6 +57,9 @@ class JournalState extends State<Journal> {
             },
           ),
           TextFormField(
+            style: TextStyle(
+              color: Colors.white,
+            ),
             decoration: const InputDecoration(
               hintText: 'Journal',
               hintStyle: TextStyle(
