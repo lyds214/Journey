@@ -27,7 +27,7 @@ class JournalState extends State<Journal> {
         actions: <Widget>[
           IconButton(
             icon: Icon(
-              Icons.settings,
+              Icons.check,
               color: Colors.white,
             ),
             onPressed: () {

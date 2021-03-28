@@ -6,6 +6,7 @@ import 'package:journey/music_selection.dart';
 import 'package:journey/questionnair/mood.dart';
 import '../demo.dart' as global;
 import '../entry.dart';
+import 'package:journey/screens/youtube/home.dart';
 
 // Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a>
 class Quote {
@@ -89,13 +90,13 @@ class _HomeViewState extends State<HomeView> {
                     .apply(fontSizeFactor: 2.0)),
           ),
 
-          Spacer(),
+          // Spacer(),
 
           Container(
-              height: 200,
+              height: 800,
               width: mediaQuery.size.width,
               color: Colors.black,
-              child: Text("Spotify Recommendations")),
+              child: HomeScreen()),
 
           Spacer(),
 

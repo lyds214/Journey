@@ -26,7 +26,7 @@ class _OnBoardingState extends State<OnBoarding> {
   }
   final pageList = [
     PageModel(
-      color: Color(0xFF01579B),
+      color: Color(0xFF4527A0),
       heroImagePath: 'assets/img/meme1.jpg',
       title: Text(
         "Welcome to Journey!",
@@ -37,10 +37,10 @@ class _OnBoardingState extends State<OnBoarding> {
         ),
       ),
       body: Text(""),
-      iconImagePath: '',
+      iconImagePath: ' ',
     ),
     PageModel(
-      color: Color(0xFF0277BD),
+      color: Color(0xFF512DA8),
       heroImagePath: 'assets/img/meme2.jpg',
       title: Text(
         "Purpose",
@@ -61,7 +61,7 @@ class _OnBoardingState extends State<OnBoarding> {
       iconImagePath: '',
     ),
     PageModel(
-      color: Color(0xFF0288D1),
+      color: Color(0xFF5E35B1),
       heroImagePath: 'assets/img/meme3.png',
       title: Text(
         "Give and Take",
@@ -82,7 +82,7 @@ class _OnBoardingState extends State<OnBoarding> {
       iconImagePath: '',
     ),
     PageModel(
-      color: Color(0xFF039BE5),
+      color: Color(0xFF673AB7),
       heroImagePath: 'assets/img/meme4.png',
       title: Text(
         "Chat",
@@ -104,19 +104,6 @@ class _OnBoardingState extends State<OnBoarding> {
     ),
   ];
 
-  NavigateToTabs() async {
-    return Tabs();
-    /// update onbaording status of current user
-    // await DatabaseService().updateOnboardingStatus(uid)
-    //     .then((value) {
-    //   if(widget.userRole == 'student') {
-    //     return StudentTabs();
-    //   } else {
-    //     return DonorTabs();
-    //   }
-    // });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -124,12 +111,8 @@ class _OnBoardingState extends State<OnBoarding> {
       body: FancyOnBoarding(
         doneButtonText: "Done",
         skipButtonText: "Skip",
-        onDoneButtonPressed: () =>
-            NavigateToTabs(),
-        // Navigator.of(context).pushNamed(StudentTabs.routeName),
-        onSkipButtonPressed: () =>
-            NavigateToTabs(),
-        // Navigator.of(context).pushNamed(StudentTabs.routeName),
+        onDoneButtonPressed: () => Navigator.of(context).pushNamed('home.dart'),
+        onSkipButtonPressed: () => Navigator.of(context).pushNamed('home.dart'),
         pageList: pageList,
       ),
     );

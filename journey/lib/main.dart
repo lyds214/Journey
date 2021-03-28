@@ -55,13 +55,14 @@ class Journey extends StatelessWidget {
         ),
       ),
       routes: {
+        OnBoarding.routeName: (ctx) => OnBoarding(),
         Tabs.routeName: (ctx) => Tabs(),
         HomeView.routeName: (ctx) => HomeView(),
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (ctx) => Tabs());
       },
-      home: Tabs(),
+      home: OnBoarding(),
     );
   }
 }
