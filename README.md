@@ -1,6 +1,8 @@
 # Journey
 A Flutter-based application created for MarinaHacks 2021
 
+- Winner of Mental Health category - 
+
 ## Table of Contents
  - [Getting Started](#getting-started)
  - [Build](#build)
